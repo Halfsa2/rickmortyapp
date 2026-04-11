@@ -1,4 +1,4 @@
-import {Character, getCharacter} from "rickmortyapi";
+import {Character} from "rickmortyapi";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
