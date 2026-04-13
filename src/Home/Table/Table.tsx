@@ -2,27 +2,19 @@ import {GetCharacters} from "../../API/getCharacters";
 import {Character} from "rickmortyapi";
 import {Link} from "react-router";
 import {useState} from "react";
+import {Pagination} from "@mui/material";
 
 export default function Table(){
     const [searchBarValue,setSearchBarValue] = useState<string>("");
-    const [pageCount,setPagecount] = useState<number>(1);
-    console.log(searchBarValue)
+    const [pageCount,setPageCount] = useState<number>(1);
+    const results = GetCharacters(searchBarValue,pageCount);
+    const characters = results?results.results?results.results:[]:[];
+    console.log(characters)
     return (
         <div>
-            <input id="searchBar" type="text" onChange={event=>{setSearchBarValue(event.target.value)}}/>
-            <table className="homeTable">
-                <thead>
-                    <tr>
-                        <th>Avatar</th>
-                        <th>Name</th>
-                        <th>Species</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {fillTable(GetCharacters(searchBarValue,pageCount))}
-                </tbody>
-            </table>
+            <input id="searchBar" type="text" onChange={event=>{setPageCount(1);setSearchBarValue(event.target.value);}}/>
+            {fillTable(characters)}
+            <Pagination hidden={characters.length === 0} page={pageCount} onChange={(e,value)=>{setPageCount(value)}} count={results?.info?.pages} />
         </div>
     )
 }
@@ -47,8 +39,18 @@ function fillTable(characters:Character[]){
         </tr>
     )
  return(
-     <>
-         {tableBody}
-     </>
+     <table className="homeTable">
+         <thead>
+         <tr>
+             <th>Avatar</th>
+             <th>Name</th>
+             <th>Species</th>
+             <th>Status</th>
+         </tr>
+         </thead>
+         <tbody>
+            {tableBody}
+         </tbody>
+     </table>
  )
 }
