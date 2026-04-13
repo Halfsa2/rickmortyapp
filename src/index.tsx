@@ -8,6 +8,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
+    //I'm leaving this here on purpose for now, even though it makes my app refresh way too many times
   <React.StrictMode>
     <App />
   </React.StrictMode>
