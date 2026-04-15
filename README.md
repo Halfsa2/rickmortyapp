@@ -1,6 +1,19 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to run
+Clone the repository via
+
+### git clone https://github.com/Halfsa2/rickmortyapp.git
+
+Install dependencies by running
+
+### npm i
+
+Run the application using
+
+### npm start
+
 
 ## Available Scripts
 
