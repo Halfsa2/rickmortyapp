@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {Character, getCharacters, Info} from "rickmortyapi";
+import {Character, Info} from "rickmortyapi";
 import axios from "axios";
 
 export function GetCharacters(prompt:string, page:number){
