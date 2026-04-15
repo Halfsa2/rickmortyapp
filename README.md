@@ -4,15 +4,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## How to run
 Clone the repository via
 
-### git clone https://github.com/Halfsa2/rickmortyapp.git
+### `git clone https://github.com/Halfsa2/rickmortyapp.git`
 
 Install dependencies by running
 
-### npm i
+### `npm i`
 
 Run the application using
 
-### npm start
+### `npm start`
 
 
 ## Available Scripts
